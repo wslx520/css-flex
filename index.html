@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Flex布局</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body style="padding:1.5em">
+    <h1>CSS Flex布局样例页</h1>
+    <p>语法详细介绍可参考: <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a></p>
+    <p>
+        flex布局通常是一个容器,内含N个子元素.本页中为方便讲解,假定容器为
+    <b>box</b>, 子元素为
+    <b>item</b>.
+    </p>
+    <div class="alert alert-primary">
+        注: 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
+    </div>
+
+    <br>
+    <h2>box相关属性</h2>
+    <div class="table">
+        <div class="row">
+            <div class="cell">
+                <p>全部默认. 很轻松的实现无限子元素不换行</p>
+                <div class="box fixed-width">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-direction: row-reverse;</p>
+                <div class="box" style="flex-direction:row-reverse">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-direction: column;</p>
+                <div class="box" style="flex-direction:column">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-direction: column-reverse;</p>
+                <div class="box" style="flex-direction:column-reverse">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>box flex-wrap: wrap;</p>
+                <div class="box" style="flex-wrap:wrap">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-wrap: wrap-reverse;</p>
+                <div class="box" style="flex-wrap:wrap-reverse">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-primary">
+        flex-flow等于flex-direction与flex-wrap一起写,所以不举例.
+        <br> flex-flow: [flex-direction] [flex-wrap];
+    </div>
+    <div class="table">
+        <div class="row">
+            <div class="cell">
+                <p>box justify-content: flex-start;</p>
+                <div class="box" style="justify-content: flex-start">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box justify-content: flex-end;</p>
+                <div class="box" style="justify-content: flex-end">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box justify-content: center;</p>
+                <div class="box" style="justify-content:center;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box justify-content: space-between;</p>
+                <div class="box" style="justify-content: space-between">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box justify-content: space-around;</p>
+                <div class="box" style="justify-content: space-around">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-primary">
+        box align-items的效果需要在各个 item高度不一时容易看出来
+    </div>
+    <div class="table">
+        <div class="row">
+            <div class="cell">
+                <p>box align-items: flex-start;</p>
+                <div class="box" style="align-items: flex-start">
+                    <div class="item">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">2
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">3</div>
+                    <div class="item">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box align-items: flex-end;</p>
+                <div class="box" style="align-items: flex-end">
+                    <div class="item">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">2
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">3</div>
+                    <div class="item">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box align-items: center;</p>
+                <div class="box" style="align-items: center">
+                    <div class="item">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">2
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">3</div>
+                    <div class="item">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box align-items: baseline;</p>
+                <div class="box" style="align-items: baseline">
+                    <div class="item fz24">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">
+                        2
+                    </div>
+                    <div class="item">3</div>
+                    <div class="item fz32">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box align-items: stretch;</p>
+                <div class="box" style="align-items: stretch">
+                    <div class="item">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">2
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">3</div>
+                    <div class="item">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-primary">
+        box align-content必须要在 items 有多行的时候才有用(所以搭配flex-wrap一起用)
+        <br> align-content 属性值与 justify-content 差不多, 但多了一个 stretch (来自 align-items)
+    </div>
+    <div class="table">
+        <div class="row">
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:flex-start;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:flex-start;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:flex-end;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:flex-end;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:center;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:center;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:stretch;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:stretch;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:space-between;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:space-between;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>box flex-wrap: wrap;align-content:space-around;</p>
+                <div class="box" style="flex-wrap:wrap;align-content:space-around;">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                </div>
+            </div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </div>
+
+    <h2>子元素item的属性</h2>
+
+    <div class="table">
+        <div class="row">
+            <div class="cell">
+                <p>item order默认0;即不设置order会排最前;设置后,越小的值越前;
+                    <span class="text-danger">可以</span>设负数</p>
+                <div class="box" style="flex-wrap:wrap;align-content:space-around;">
+                    <div class="item" style="order:3;">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item" style="order:2;">7</div>
+                    <div class="item">8</div>
+                    <div class="item" style="order:-1;">9</div>
+                </div>
+            </div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>item flex-grow默认为0(即不放大),当只有一个item有flex-grow, 他会撑满排除其他元素外的剩余空间</p>
+                <div class="box">
+                    <div class="item" style="flex-grow:1;">1</div>
+                    <div class="item" style="width:40px">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>item flex-grow默认为0,当只有一个item有flex-grow, 他会撑满排除其他元素外的剩余空间</p>
+                <div class="box">
+                    <div class="item" style="flex-grow:1;">1</div>
+                    <div class="item" style="flex-grow:2;">2</div>
+                    <div class="item">3</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>item 换行 flex-grow </p>
+                <div class="box" style="flex-wrap:wrap;align-content:space-around;">
+                    <div class="item" style="flex-grow:1;">1</div>
+                    <div class="item" style="width:40px">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item" style="flex-grow:1;">6</div>
+                </div>
+            </div>
+            <div class="cell">
+                <p>item 换行 flex-grow, flex-shrink 同时存在 </p>
+                <div class="box" style="flex-wrap:wrap;align-content:space-around;">
+                    <div class="item" style="flex-grow:1;">1</div>
+                    <div class="item" style="width:40px">2</div>
+                    <div class="item" style="flex-shrink: 0;">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item" style="flex-grow:1;">6</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>item flex-shrink 默认1(即不缩小) ,数值越大,表示缩小更多</p>
+                <div class="box" style="">
+                    <div class="item" style="flex-shrink:0;">1</div>
+                    <div class="item" style="width:60px">2</div>
+                    <div class="item" style="flex-shrink:1;">3</div>
+                    <div class="item" style="flex-shrink:2;">4</div>
+                    <div class="item" style="flex-shrink:3;">5</div>
+                </div>
+            </div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>item flex-basis 默认auto(即item本身宽度).item会根据 flex-basis 定义的宽度决定 grow或shrink的空间 </p>
+                <div class="box" style="">
+                    <div class="item">1</div>
+                    <div class="item" style="">2</div>
+                    <div class="item" style="flex-basis:40px;">3</div>
+                    <div class="item" style="flex-shrink:2;">4</div>
+                    <div class="item" style="flex-basis:35px;">5</div>
+                </div>
+            </div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <p>item align-self定义item的对齐方式, 默认auto(即继承box的align-items属性). </p>
+                <div class="box">
+                    <div class="item" style="align-self:flex-start;">1
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item" style="align-self:flex-end;">2
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item" style="align-self: center;">3</div>
+                    <div class="item fz32" style="align-self: baseline;">4
+                        <br>
+                        <br>
+                    </div>
+                    <div class="item" style="align-self:stretch;">5
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="cell"></div>
+        </div>
+        <div class="alert alert-primary">
+            flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto, 所以不再举例。后两个属性可选(即如果只写一个数字, = flex-grow)。
+        </div>
+    </div>
+</body>
+
+</html>

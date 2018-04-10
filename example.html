@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Flex布局常见案例</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="examples">
+    <p>列举一些网页中常用到的布局, 使用Flex布局, 以展现 flex 布局的优越性</p>
+    <p>注:外面有一层
+        <span class="text-success">绿框</span>,可拖拉缩放</p>
+    <div class="wrapper">
+        <div class="box" style="align-items:stretch;">
+            <div class="item bg1" style="flex-basis:60px;">左侧固定宽度</div>
+            <div class="item bg2" style="flex-grow:1;">右侧自适应</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box" style="align-items:stretch;">
+            <div class="part column item bg1" style="flex-basis:60px;">
+                <div class="item" style="flex-basis: 80px; ">左侧上部固定</div>
+                <div class="item bg3" style="flex-grow:1;">下部铺满</div>
+
+            </div>
+            <div class="item bg2" style="flex-grow:1;">右侧自适应</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box column" style="align-items:stretch;">
+            <div class="item bg5" style="flex-basis:60px;">Head固定高度</div>
+            <div class="item part bg1" style="flex-grow:1;">
+                <div class="item" style="flex-basis: 80px; ">左侧宽度固定</div>
+                <div class="item bg3" style="flex-grow:1;">右侧铺满</div>
+
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box column" style="align-items:stretch;">
+            <div class="item bg5" style="flex-basis:60px;">Head固定高度</div>
+            <div class="item part bg1" style="flex-grow:1;">
+                <div class="item" style="flex-basis: 80px; ">左侧宽度固定</div>
+                <div class="item bg3" style="flex-grow:1;">中间铺满</div>
+                <div class="item bg4" style="flex-basis: 60px;">右侧固定</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+            <div class="box column" style="align-items:stretch;">
+                <div class="item bg5" style="flex-basis:60px;">Head固定高度</div>
+                <div class="item part bg1" style="flex-grow:1;">
+                    <div class="item" style="flex-basis: 80px; ">左侧宽度固定</div>
+                    <div class="item bg3 part column" style="flex-grow:1;">
+                        <div class="item" style="flex-grow: 1;">中间铺满
+                            
+                        </div>
+                        <div class="item bg2" style="flex-basis: 20px;">中部下面固定高度且钉在底部</div>
+                    </div>
+                    <div class="item bg4" style="flex-basis: 60px;">右侧固定</div>
+                </div>
+            </div>
+        </div>
+    <div class="alert alert-primary">不定行/列均分(Grid)
+        <br>
+        flex实现这种布局异常简单,而且对行数/列数没有要求,不需要根据行数/列数的增减改写样式----再也不用写 width: 33.333333% 了!
+        <br>
+        而且可以方便的定制行/列之间的间隔
+    </div>
+    <div class="wrapper">
+        <div class="box column grow" style="align-items:stretch;">
+            <div class="item bg1">1</div>
+            <div class="item bg2">2</div>
+            <div class="item bg3">3</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box column grow" style="align-items:stretch;">
+            <div class="item bg1">1</div>
+            <div class="item bg2">2</div>
+            <div class="item bg3">3</div>
+            <div class="item bg4">4</div>
+            <div class="item bg5">5</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box grow" style="align-items:stretch;">
+            <div class="item bg1">1</div>
+            <div class="item bg2">2</div>
+            <div class="item bg3">3</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box grow" style="align-items:stretch;">
+            <div class="item bg1" style="margin-right:4px;">1</div>
+            <div class="item bg2" style="margin-right:4px;">2</div>
+            <div class="item bg3" style="margin-right:4px;">3</div>
+            <div class="item bg4" style="margin-right:4px;">4</div>
+            <div class="item bg5" style="margin-right:4px;">5</div>
+        </div>
+    </div>
+    <div class="alert alert-primary">
+        不定宽高的水平垂直居中
+    </div>
+    <div class="wrapper">
+            <div class="box" style="align-items:center; justify-content:center;">
+                <div class="item bg1" style="text-align:center;">
+                    一段文字 <br>
+                    可能有多行 <br>
+                    谁知道呢
+                </div>
+            </div>
+        </div>
+    <div class="wrapper">
+            <div class="box" style="align-items:center; justify-content:center;">
+                <div class="item bg2" style="text-align:right;">
+                    一段文字 <br>
+                    可能有多行 <br>
+                    谁知道呢 <br>
+                    哈哈哈, 我要右对齐
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
